@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">NasaWallpaper</string>
+    <string name="tv_wallpaper_retrieved">Retrieved</string>
+    <string name="tv_wallpaper_not_retrieved">Not retrieved</string>
+    <string name="button_main">Get wallpaper</string>
 </resources>
