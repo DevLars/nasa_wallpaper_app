@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.lars.nasawallpaper.BitmapUtils
 import com.lars.nasawallpaper.R
 import kotlinx.android.synthetic.main.main_fragment.*
 
@@ -23,10 +24,11 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.view.updateTitle.observe(this, Observer { title ->
-            wallpaper_title.text = title
+            //wallpaper_title.text = title
         })
         viewModel.view.updateBackground.observe(this, Observer {
             // image.setImageBitmap(Bitmap.createScaledBitmap(it, 120, 120, false))
+            //image.setImageBitmap(BitmapUtils().scaleBitmapToFullScreen(checkNotNull(context), checkNotNull(it)))
             image.setImageBitmap(it)
         })
         viewModel.view.showProgressBar.observe(this, Observer { progressBar.visibility = View.VISIBLE })
@@ -41,6 +43,8 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        button.setOnClickListener { viewModel.presenter.retrieveWallpaper() }
+        button.setOnClickListener {
+            viewModel.presenter.retrieveWallpaper()
+        it.visibility = View.INVISIBLE}
     }
 }

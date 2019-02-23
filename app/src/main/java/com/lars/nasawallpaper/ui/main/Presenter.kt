@@ -1,4 +1,4 @@
-package com.lars.nasawallpaper
+package com.lars.nasawallpaper.ui.main
 
 import android.util.Log
 import com.lars.nasawallpaper.service.NetworkService
