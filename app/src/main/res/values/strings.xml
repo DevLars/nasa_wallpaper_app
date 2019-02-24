@@ -4,5 +4,8 @@
     <string name="tv_wallpaper_not_retrieved">Not retrieved</string>
     <string name="button_main">Get wallpaper</string>
     <string name="main_activity_title">Set your wallpaper</string>
+    <string name="options">options</string>
     <string name="settings">settings</string>
+    <string name="set">Set</string>
+    <string name="download">Download</string>
 </resources>

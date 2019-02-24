@@ -4,9 +4,8 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.preference.PreferenceManager
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lars.nasawallpaper.R
@@ -15,6 +14,7 @@ import kotlinx.android.synthetic.main.main_fragment.*
 class MainFragment : Fragment() {
 
     companion object {
+        private const val HDQUALITY = "hd"
         fun newInstance() = MainFragment()
     }
 
@@ -46,6 +46,11 @@ class MainFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.presenter.retrieveWallpaper()
+        viewModel.presenter.retrieveWallpaper(
+            PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+                HDQUALITY,
+                false
+            )
+        )
     }
 }

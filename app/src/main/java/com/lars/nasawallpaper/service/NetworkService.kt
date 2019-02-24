@@ -41,11 +41,17 @@ class NetworkService {
 
     fun getImage(url: String): Bitmap {
         val input = URL(url).openStream()
-        return BitmapFactory.decodeStream(input)
+        Log.i("info", "image url = $url")
+        return try {
+            BitmapFactory.decodeStream(input)
+        } catch (ex: Exception) {
+            Log.i("Image", "Current image not available, fallback to default image")
+            getImage("https://apod.nasa.gov/apod/image/1902/heic1901aTriangulumS.jpg")
+        }
     }
 
     companion object {
-        const val PATH = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+        const val PATH = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2019-02-23"
         const val API_KEY_NAME = "api_key"
         const val API_KEY_VALUE = "DEMO_KEY"
     }
