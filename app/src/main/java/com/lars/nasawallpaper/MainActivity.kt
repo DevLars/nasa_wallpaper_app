@@ -6,7 +6,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import com.lars.nasawallpaper.ui.main.MainFragment
-import com.lars.nasawallpaper.ui.main.SettingsFragment
+import com.lars.nasawallpaper.ui.settings.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         title = getString(R.string.main_activity_title)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, MainFragment())
                 .addToBackStack(MainFragment::class.java.simpleName)
                 .commit()
         }

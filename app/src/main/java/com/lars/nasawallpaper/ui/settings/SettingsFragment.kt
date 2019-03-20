@@ -1,4 +1,4 @@
-package com.lars.nasawallpaper.ui.main
+package com.lars.nasawallpaper.ui.settings
 
 import android.os.Bundle
 import android.support.v7.preference.PreferenceFragmentCompat
@@ -14,7 +14,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        activity?.title = "Settings"
+        activity?.title = getString(R.string.settings_title)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
