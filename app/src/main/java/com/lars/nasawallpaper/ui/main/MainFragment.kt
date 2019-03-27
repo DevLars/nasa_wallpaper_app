@@ -55,7 +55,7 @@ class MainFragment : Fragment() {
             )
         )
 
-        set.setOnClickListener {
+        fab.setOnClickListener {
             if (backgroundImage != null) {
                 val wallpaperManager = WallpaperManager.getInstance(context)
                 try {
